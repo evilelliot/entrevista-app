@@ -15,10 +15,6 @@ html, body{
 tr{
     cursor: pointer;
 }
-.main-table{
-    border-left: 1px solid #006D77;
-    background-color: #343A40;
-}
 .table-borderless > tbody > tr > td,
 .table-borderless > tbody > tr > th,
 .table-borderless > tfoot > tr > td,
