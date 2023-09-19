@@ -1,14 +1,23 @@
 .users-main{
     border-radius: 5px;
-    /* border: 2px solid #006D77;*/
     width: 80%;
     margin-top: 20px;
-    background-color: #EDF6F9;
+}
+.main-form{
+    border-top: 2px solid #343A40;
+    border-left: 2px solid #343A40;
+    border-bottom: 2px solid #343A40;
+    border-radius: 5px 0px 0px 5px;
 }
 @media (max-width: 767px) {
     .users-main {
         width: 100%; 
         border: 0px;
+    }
+    .main-form{
+        border: 0px solid;
+        border-top: 2px solid #343A40;
+        border-radius: 0px;
     }
     row{
         width: 100%;

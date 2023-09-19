@@ -2,3 +2,16 @@
     padding-top: 10px;
     width: 100%;
 }
+.btn-danger{
+    background-color: #E29578;
+}
+.btn-success{
+    background-color: #006D77;
+}
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #9f4258;
+    color: #fefefe;
+    cursor: default;
+    border-radius: 10px;
+}

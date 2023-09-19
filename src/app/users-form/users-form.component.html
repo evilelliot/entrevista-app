@@ -1,32 +1,36 @@
 <!-- En la plantilla del formulario-->
 <form #userForm="ngForm" name="userForm" action="" class="form">
     <div class="form-group">
-        <h4 class="text-center">Nuevo usuario</h4>
+        <h4 class="text-center">Dashboard</h4>
     </div>
     <div class="form-group">
+        <label class="text-info" for="user.name">Nombre:</label>
         <input class="form-control" type="text" [(ngModel)]="formData.nombre" placeholder="Nombre" name="user.name">
     </div>
     <div class="form-group">
+        <label class="text-info" for="user.email">Email:</label>
         <input class="form-control" type="text" [(ngModel)]="formData.email" placeholder="Email"
         name="user.email">
     </div>
     <div class="form-group">
+        <label class="text-info" for="user.edad">Edad:</label>
         <input class="form-control" type="number" [(ngModel)]="formData.edad" placeholder="Edad" name="user.age">
     </div>
     <div class="form-group">
+        <label class="text-info" for="user.sexo">Sexo:</label>
         <select name="gender" id="gender" class="form-control" [(ngModel)]="formData.sexo">
-            <option value="0">Masculino</option>
-            <option value="1">Femenino</option>
-            <option value="2">Otro</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otrx">Otro</option>
         </select>
     </div>
-    <div class="form-group d-flex justify-content-between">
-        <button class="btn btn-success" (click)="nuevoUsuario()">
-            Guardar
+    <div class="form-group d-flex justify-content-center">
+        <button class="btn btn-success mx-2" (click)="nuevoUsuario()">
+            <i class="fa-solid fa-floppy-disk"></i> Guardar
         </button>
     
         <button class="btn btn-danger" (click)="eliminarUsuario()">
-            Eliminar
+            <i class="fa-solid fa-delete-left"></i> Eliminar
         </button>
     </div>       
 </form>

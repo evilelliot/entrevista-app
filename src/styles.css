@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?Roboto+Condensed:wght@300;700&display=swap');
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background-color: #006D77 !important;
+    color: #fefefe;
+    cursor: default;
+    border-radius: 10px;
+    font-weight: bolder;
+}
 html, body{
     background-color: #F8F9FA;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+tr{
+    cursor: pointer;
+}
+.main-table{
+    border-left: 1px solid #006D77;
+    background-color: #343A40;
+}
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+a:not([href]):not([class]):hover {
+    background-color: #018692;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
 }

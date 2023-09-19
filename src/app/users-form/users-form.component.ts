@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../data.service';
 import { UserService } from '../user-service.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-users-form',
   templateUrl: './users-form.component.html',
@@ -19,21 +20,12 @@ export class UsersFormComponent implements OnInit {
   ngOnInit() {
     this.dataService.getData().subscribe((data: any) => { 
       this.formData = data || {};
-      switch(this.formData.sexo){
-        case 'Male':
-          this.formData.sexo = 0;
-          break;
-        case 'Female':
-          this.formData.sexo = 1;
-          break;
-        default:
-          this.formData.sexo = 2;
-      }
       this.selectedID = this.formData.id;
     });
   }
   nuevoUsuario() {
     var formDataSend = {};
+    var sexo = "";
     this.selectedID = this.formData.id;
     if(this.selectedID == undefined){
       // Registrar nuevo usuario
@@ -45,12 +37,21 @@ export class UsersFormComponent implements OnInit {
           "edad" : this.formData.edad,
           "sexo" : this.formData.sexo
         };
+        
         this.userService.nuevoUsuario(formDataSend).subscribe(
           (response) => {
-            console.log("yea");
+            Swal.fire({
+              icon: 'success',
+              title: '¡Perfecto!',
+              text: `Has registrado un usuario nuevo.`
+            });
           },
           (error) => {
-            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops, ha ocurrido un error :(',
+              text: 'No se pudo registrar al usuario.'
+            });
           }
         );
       }else{
@@ -68,10 +69,18 @@ export class UsersFormComponent implements OnInit {
       console.log(formDataSend);
       this.userService.actualizarUsuario(formDataSend).subscribe(
         (response) => {
-          console.log("yea, actualizado");
+          Swal.fire({
+            icon: 'success',
+            title: '¡Perfecto!',
+            text: `El usuario se ha actualizado correctamente.`
+          });
         },
         (error) => {
-          console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops, ha ocurrido un error :(',
+            text: 'No se pudo actualizar al usuario.'
+          });
         }
       );
     }
@@ -82,10 +91,18 @@ export class UsersFormComponent implements OnInit {
 
       this.userService.eliminarUsuario(this.formData).subscribe(
         (response) => {
-          console.log("yea, borrado");
+          Swal.fire({
+            icon: 'success',
+            title: '¡Perfecto!',
+            text: `Has eliminado un usuario nuevo.`
+          });
         },
         (error) => {
-          console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops, ha ocurrido un error :(',
+            text: 'No se pudo eliminar al usuario.'
+          });
         }
       );
     }else{
