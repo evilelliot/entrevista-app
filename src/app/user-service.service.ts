@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class UserService {
-  private baseUrl = '';
+  private baseUrl = 'https://entrevista-api.onrender.com/users';
   
   constructor(private http: HttpClient) {}
 
