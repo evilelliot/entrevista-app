@@ -1,0 +1,29 @@
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of objetos | paginate: { itemsPerPage: 5, currentPage: p }" (click)="cargarDatos(item)">
+                <td>{{ item.id }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.edad }}</td>
+                <td>{{ item.sexo }}</td> 
+            </tr>
+        </tbody>
+    </table>
+    <p class="text-center">
+        <pagination-controls 
+            (pageChange)="p = $event"
+            previousLabel="Anterior"
+            nextLabel="Siguiente">
+        </pagination-controls>
+    </p>
+</div>

@@ -1,0 +1,32 @@
+<!-- En la plantilla del formulario-->
+<form #userForm="ngForm" name="userForm" action="" class="form">
+    <div class="form-group">
+        <h4 class="text-center">Nuevo usuario</h4>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="formData.nombre" placeholder="Nombre" name="user.name">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="formData.email" placeholder="Email"
+        name="user.email">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="number" [(ngModel)]="formData.edad" placeholder="Edad" name="user.age">
+    </div>
+    <div class="form-group">
+        <select name="gender" id="gender" class="form-control" [(ngModel)]="formData.sexo">
+            <option value="0">Masculino</option>
+            <option value="1">Femenino</option>
+            <option value="2">Otro</option>
+        </select>
+    </div>
+    <div class="form-group d-flex justify-content-between">
+        <button class="btn btn-success" (click)="nuevoUsuario()">
+            Guardar
+        </button>
+    
+        <button class="btn btn-danger" (click)="eliminarUsuario()">
+            Eliminar
+        </button>
+    </div>       
+</form>
