@@ -23,6 +23,10 @@
         border-top: 2px solid #343A40;
         border-radius: 0px;
     }
+    .main-table{
+        border-left: 1px solid #006D77;
+        background-color: #343A40 !important;
+    }
     row{
         width: 100%;
     }
