@@ -32,4 +32,8 @@ export class UserService {
   buscarUsuario(id: number) {
     return this.http.get(`${this.baseUrl}/list/${id}`);
   }  
+
+  enlistarTodos(){
+    return this.http.get(`${this.baseUrl}/list`);
+  }
 }
